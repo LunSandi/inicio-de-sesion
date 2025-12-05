@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="..\css/register.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Cuenta (Registro)</title>
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Registro de Usuario</h2>
+        <form action="/submit-registration" method="POST">
+            
+            <div class="input-group">
+                <label for="nombreCompleto">Nombre Completo:</label>
+                <input 
+                    type="text" 
+                    id="nombreCompleto" 
+                    name="nombreCompleto" 
+                    required 
+                    title="Solo letras y espacios son permitidos."
+                    pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ ]+$"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="username">Nombre de Usuario (Correo Electrónico):</label>
+                <input 
+                    type="email" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    title="Debe ser un correo electrónico válido."
+                    pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="movil">Número:</label>
+                <input 
+                    type="tel" 
+                    id="movil" 
+                    name="movil" 
+                    required 
+                    title="Debe contener entre 7 y 12 dígitos numéricos."
+                    pattern="^[0-9]{7,12}$"
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="password">Contraseña:</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    title="Mínimo 8 caracteres, incluyendo: una minúscula, una mayúscula, un número y un carácter especial (ej. #, @, !)."
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+                >
+            </div>
+            
+            <button type="submit">Crear Cuenta</button>
+        </form>
+        <div class="login-link">
+            <p>
+                Si ya estás registrado, haz clic aquí para 
+                <a href="../iniciar-sesion.html">**Iniciar Sesión**</a>.
+            </p>
+        </div>
+
+    </div>
+<script src="..\js\register.js"></script>
+</body>
+</html>

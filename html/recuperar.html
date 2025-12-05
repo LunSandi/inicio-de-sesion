@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="..\css/recuperar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperación de Contraseña</title>
+</head>
+<body>
+
+    <div class="recovery-container">
+        <h2>Recuperar Contraseña</h2>
+        <form id="recoveryForm">
+            
+            <p>Ingresa y confirma tu nueva contraseña. Debe cumplir con los mismos requisitos de seguridad.</p>
+
+            <div class="message-box" id="feedbackMessage"></div>
+
+            <div class="input-group">
+                <label for="newPassword">Nueva Contraseña:</label>
+                <div class="password-container">
+                    <input 
+                        type="password" 
+                        id="newPassword" 
+                        name="newPassword" 
+                        required 
+                        title="Mínimo 8 caracteres, incluyendo: una minúscula, una mayúscula, un número y un carácter especial (ej. #, @, !)."
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+                    >
+                    <span class="toggle-password" id="toggleNewPassword">Mostrar Contraseña</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirmar Contraseña:</label>
+                <div class="password-container">
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        required 
+                        title="Debe coincidir con la Nueva Contraseña."
+                    >
+                    <span class="toggle-password" id="toggleConfirmPassword">Mostrar Contraseña</span>
+                </div>
+            </div>
+            
+            <button type="submit" id="updateButton">Actualizar Contraseña</button>
+        </form>
+
+        <div class="login-link" id="loginLink" style="display: none;">
+            <p>
+                <a href="../iniciar-sesion.html">**Iniciar Sesión**</a>
+            </p>
+        </div>
+
+    </div>
+
+<script src="..\js\recuperar.js"></script>
+</body>
+</html>
